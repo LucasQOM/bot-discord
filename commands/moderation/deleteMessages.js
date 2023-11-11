@@ -22,8 +22,10 @@ module.exports = {
     let countDeletedMessages = 0;
 
     await interaction.reply({
-      content: `Deletando mensagens que contenham a palavra chave ${keyword}...`,
+      content: `Apagando as mensagens que contém a palavra ${keyword}`,
+      ephemeral: true,
     });
+
     let i = 0;
     while (minimumMessages > 0) {
       if (lastMessage && lastMessage.id) {
@@ -51,8 +53,9 @@ module.exports = {
       }
     }
 
-    await interaction.editReply({
-      content: `Foram deletadas ${countDeletedMessages} mensagens!`
+    await interaction.followUp({
+      content: `Foram apagadas ${countDeletedMessages} mensagens`,
+      ephemeral: true,
     });
-  }
+  },
 };
