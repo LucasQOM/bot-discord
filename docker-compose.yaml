@@ -10,3 +10,5 @@ services:
     environment:
       - NODE_ENV=development
     command: npm run dev
+    mem_limit: 512m
+    cpus: 0.5
