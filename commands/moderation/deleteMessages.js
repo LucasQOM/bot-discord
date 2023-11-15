@@ -26,8 +26,7 @@ module.exports = {
       ephemeral: true,
     });
 
-    let i = 0;
-    while (minimumMessages > 0) {
+    for (i = 0; minimumMessages > 0; i++) {
       if (lastMessage && lastMessage.id) {
         if (i >= 1) {
           messages = await channel.messages.fetch({
